@@ -93,6 +93,11 @@ function App() {
     return;
   }
 
+  if (balance !== null && Number(amount) > Number(balance)) {
+  setStatus("Insufficient XLM balance.");
+  return;
+}
+
   try {
     setIsSending(true);
     setStatus("Preparing transaction...");
