@@ -148,7 +148,11 @@ console.log(
 );
 
 setTransactionHash(submitResult.hash);
+
 await fetchBalance(walletAddress);
+
+setRecipient("");
+setAmount("");
 
   } catch (error) {
     console.error("Transaction error:", error);
