@@ -43,26 +43,19 @@ No real XLM is used.
 Clone the repository:
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
-```
+git clone https://github.com/xheyue/stellar-pay.git
 
 Open the project directory:
 
-```bash
 cd stellar-pay
-```
 
 Install dependencies:
 
-```bash
 npm install
-```
 
 Start the development server:
 
-```bash
 npm run dev
-```
 
 Open the local development URL shown by Vite in your browser.
 
@@ -78,19 +71,12 @@ Enter the amount of XLM you want to send.
 Click Send XLM.
 Approve the transaction in Freighter.
 After submission, StellarPay displays the transaction result and transaction hash.
+Screenshots
+Wallet Connected
 
-```markdown
-## Screenshots
+Successful Testnet Transaction
 
-### Wallet Connected
-
-![Wallet Connected](./screenshots/wallet-connected.png)
-
-### Successful Testnet Transaction
-
-![Successful Testnet Transaction](./screenshots/transaction-success.png)
-
-## Error Handling
+Error Handling
 
 StellarPay includes checks for:
 
@@ -114,8 +100,3 @@ Transaction signing is handled through the Freighter wallet.
 License
 
 This project is for educational purposes.
-
-Clone the repository:
-
-```bash
-git clone https://github.com/xheyue/stellar-pay.git
