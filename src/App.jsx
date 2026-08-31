@@ -209,6 +209,7 @@ setAmount("");
             onChange={(event) =>
               setRecipient(event.target.value)
             }
+            disabled={isSending}
           />
 
           <label>Amount</label>
@@ -222,6 +223,7 @@ setAmount("");
             onChange={(event) =>
               setAmount(event.target.value)
             }
+            disabled={isSending}
           />
 
           <button onClick={sendXLM} disabled={isSending}>
