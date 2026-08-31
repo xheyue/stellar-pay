@@ -106,11 +106,7 @@ License
 
 This project is for educational purposes.
 
-### Sonra ne yapacaksın?
+Clone the repository:
 
-Yapıştırdıktan sonra **Ctrl + S** ile kaydet.
-
-Şimdilik:
-
-```text
-YOUR_GITHUB_REPOSITORY_URL
+```bash
+git clone https://github.com/xheyue/stellar-pay.git
