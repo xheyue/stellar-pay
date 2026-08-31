@@ -18,6 +18,7 @@ function App() {
   const [transactionHash, setTransactionHash] = useState("");
   const [isSending, setIsSending] = useState(false);
   const [isConnecting, setIsConnecting] = useState(false);
+  const [isDisconnecting, setIsDisconnecting] = useState(false);
   const fetchBalance = async (address) => {
     const response = await fetch(
       `https://horizon-testnet.stellar.org/accounts/${address}`
@@ -40,7 +41,7 @@ function App() {
     try {
       setIsConnecting(true);
       setStatus("");
-
+      await new Promise((resolve) => setTimeout(resolve, 500));
       const result = await requestAccess();
 
       console.log("Freighter result:", result);
@@ -74,13 +75,19 @@ function App() {
 }
   };
 
-  const disconnectWallet = () => {
+  const disconnectWallet = async () => {
+  setIsDisconnecting(true);
+
+  await new Promise((resolve) => setTimeout(resolve, 500));
+
   setWalletAddress("");
   setBalance(null);
   setRecipient("");
   setAmount("");
   setStatus("");
   setTransactionHash("");
+
+  setIsDisconnecting(false);
 };
 
   const sendXLM = async () => {
@@ -271,9 +278,12 @@ setAmount("");
   </div>
 )}
 
-          <button onClick={disconnectWallet}>
-            Disconnect
-          </button>
+          <button
+  onClick={disconnectWallet}
+  disabled={isDisconnecting}
+>
+  {isDisconnecting ? "Disconnecting..." : "Disconnect"}
+</button>
 
         </div>
       )}
