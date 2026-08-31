@@ -17,6 +17,25 @@ function App() {
   const [status, setStatus] = useState("");
   const [transactionHash, setTransactionHash] = useState("");
   const [isSending, setIsSending] = useState(false);
+
+  const fetchBalance = async (address) => {
+    const response = await fetch(
+      `https://horizon-testnet.stellar.org/accounts/${address}`
+    );
+
+    if (!response.ok) {
+      throw new Error("Could not fetch balance.");
+    }
+
+    const account = await response.json();
+
+    const xlmBalance = account.balances.find(
+      (item) => item.asset_type === "native"
+    );
+
+    setBalance(xlmBalance ? xlmBalance.balance : "0");
+  };
+
   const connectWallet = async () => {
     try {
       setStatus("");
@@ -129,6 +148,7 @@ console.log(
 );
 
 setTransactionHash(submitResult.hash);
+await fetchBalance(walletAddress);
 
   } catch (error) {
     console.error("Transaction error:", error);
