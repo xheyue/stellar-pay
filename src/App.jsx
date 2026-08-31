@@ -17,7 +17,7 @@ function App() {
   const [status, setStatus] = useState("");
   const [transactionHash, setTransactionHash] = useState("");
   const [isSending, setIsSending] = useState(false);
-
+  const [isConnecting, setIsConnecting] = useState(false);
   const fetchBalance = async (address) => {
     const response = await fetch(
       `https://horizon-testnet.stellar.org/accounts/${address}`
@@ -38,6 +38,7 @@ function App() {
 
   const connectWallet = async () => {
     try {
+      setIsConnecting(true);
       setStatus("");
 
       const result = await requestAccess();
@@ -66,9 +67,11 @@ function App() {
 
       setBalance(xlmBalance ? xlmBalance.balance : "0");
     } catch (error) {
-      console.error(error);
-      setStatus("Could not fetch wallet balance.");
-    }
+  console.error(error);
+  setStatus("Could not fetch wallet balance.");
+} finally {
+  setIsConnecting(false);
+}
   };
 
   const disconnectWallet = () => {
@@ -176,9 +179,12 @@ setAmount("");
       <p>Send XLM on Stellar Testnet</p>
 
       {!walletAddress ? (
-        <button onClick={connectWallet}>
-          Connect Freighter
-        </button>
+        <button
+  onClick={connectWallet}
+  disabled={isConnecting}
+>
+  {isConnecting ? "Connecting..." : "Connect Freighter"}
+</button>
       ) : (
         <div className="wallet-section">
 
