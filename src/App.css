@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #101827;
+  color: white;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.wallet-section {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.address {
+  word-break: break-all;
+  padding: 12px;
+  background: #1f2937;
+  border-radius: 8px;
+}
+
+.balance {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  border-radius: 8px;
+  background: white;
+  color: black;
+  font-size: 16px;
+}
+
+button {
+  padding: 14px 22px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+.status {
+  padding: 12px;
+  background: #1f2937;
+  border-radius: 8px;
+}
+
+hr {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #444;
+  margin: 20px 0;
+}
