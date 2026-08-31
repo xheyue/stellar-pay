@@ -75,13 +75,13 @@ After submission, StellarPay displays the transaction result and transaction has
 
 ### Wallet Connected
 
-![Wallet Connected](screenshots/wallet-connected.png)
+![Wallet Connected](./screenshots/wallet-connected.png)
 
 ### Successful Testnet Transaction
 
-![Successful Testnet Transaction](screenshots/transaction-success.png)
+![Successful Testnet Transaction](./screenshots/transaction-success.png)
 
-Error Handling
+## Error Handling
 
 StellarPay includes checks for:
 
