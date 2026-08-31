@@ -1,72 +1,128 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #101827;
-  color: white;
+#root {
+  width: 100%;
 }
 
 .app {
   min-height: 100vh;
+  padding: 40px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 40px;
-  box-sizing: border-box;
+}
+
+.app h1 {
+  margin: 0;
+  font-size: 42px;
+  letter-spacing: -1px;
+}
+
+.app > p {
+  margin-top: 8px;
+  margin-bottom: 32px;
+  opacity: 0.7;
 }
 
 .wallet-section {
-  width: 100%;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  width: min(680px, 100%);
+  padding: 32px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  box-sizing: border-box;
+}
+
+.wallet-section h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
 }
 
 .address {
+  padding: 14px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  font-family: monospace;
+  font-size: 13px;
   word-break: break-all;
-  padding: 12px;
-  background: #1f2937;
-  border-radius: 8px;
+  margin-bottom: 28px;
 }
 
 .balance {
-  font-size: 28px;
-  font-weight: bold;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 28px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin: 28px 0;
+}
+
+label {
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  font-weight: 600;
 }
 
 input {
   width: 100%;
-  padding: 14px;
   box-sizing: border-box;
-  border: 1px solid #555;
-  border-radius: 8px;
-  background: white;
-  color: black;
-  font-size: 16px;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.2);
+  color: inherit;
+  font-size: 15px;
+}
+
+input:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 button {
-  padding: 14px 22px;
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px 18px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
   cursor: pointer;
-  font-size: 16px;
-}
-
-button:hover {
-  opacity: 0.85;
 }
 
 .status {
-  padding: 12px;
-  background: #1f2937;
-  border-radius: 8px;
+  margin-top: 20px;
+  padding: 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  word-break: break-word;
 }
 
-hr {
-  width: 100%;
-  border: none;
-  border-top: 1px solid #444;
-  margin: 20px 0;
+.transaction-result {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.transaction-result h3 {
+  margin-top: 0;
+}
+
+.transaction-result code {
+  display: block;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.25);
+  font-size: 12px;
+  word-break: break-all;
+}
+
+.transaction-result a {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: 600;
 }
