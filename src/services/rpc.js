@@ -6,6 +6,7 @@ import {
   Asset,
   Account,
   BASE_FEE,
+  StrKey,
 } from "@stellar/stellar-sdk";
 
 const server = new Horizon.Server(
@@ -17,6 +18,10 @@ export async function createTransaction(
   recipient,
   amount
 ) {
+    if (!StrKey.isValidEd25519PublicKey(recipient)) {
+    throw new Error("Please enter a valid Stellar address.");
+  }
+
   const accountData = await server
     .accounts()
     .accountId(walletAddress)
