@@ -44,18 +44,25 @@ Clone the repository:
 
 ```bash
 git clone YOUR_GITHUB_REPOSITORY_URL
+```
 
 Open the project directory:
 
+```bash
 cd stellar-pay
+```
 
 Install dependencies:
 
+```bash
 npm install
+```
 
 Start the development server:
 
+```bash
 npm run dev
+```
 
 Open the local development URL shown by Vite in your browser.
 
@@ -71,6 +78,8 @@ Enter the amount of XLM you want to send.
 Click Send XLM.
 Approve the transaction in Freighter.
 After submission, StellarPay displays the transaction result and transaction hash.
+
+```markdown
 ## Screenshots
 
 ### Wallet Connected
