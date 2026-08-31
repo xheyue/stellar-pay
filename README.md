@@ -42,61 +42,68 @@ No real XLM is used.
 
 Clone the repository:
 
-```bash
-git clone https://github.com/xheyue/stellar-pay.git
+    git clone https://github.com/xheyue/stellar-pay.git
 
 Open the project directory:
 
-cd stellar-pay
+    cd stellar-pay
 
 Install dependencies:
 
-npm install
+    npm install
 
 Start the development server:
 
-npm run dev
+    npm run dev
 
 Open the local development URL shown by Vite in your browser.
 
-How to Use
-Install the Freighter wallet browser extension.
-Set Freighter to Stellar Testnet.
-Open StellarPay.
-Click Connect Freighter.
-Approve the wallet connection.
-Your Stellar address and XLM balance will appear.
-Enter a valid Stellar recipient address.
-Enter the amount of XLM you want to send.
-Click Send XLM.
-Approve the transaction in Freighter.
-After submission, StellarPay displays the transaction result and transaction hash.
-Screenshots
-Wallet Connected
+## How to Use
 
-Successful Testnet Transaction
+1. Install the Freighter wallet browser extension.
+2. Set Freighter to Stellar Testnet.
+3. Open StellarPay.
+4. Click **Connect Freighter**.
+5. Approve the wallet connection.
+6. Your Stellar address and XLM balance will appear.
+7. Enter a valid Stellar recipient address.
+8. Enter the amount of XLM you want to send.
+9. Click **Send XLM**.
+10. Approve the transaction in Freighter.
+11. After submission, StellarPay displays the transaction result and transaction hash.
 
-Error Handling
+## Screenshots
+
+### Wallet Connected
+
+![Wallet Connected](./screenshots/wallet-connected.png)
+
+### Successful Testnet Transaction
+
+![Successful Testnet Transaction](./screenshots/transaction-success.png)
+
+## Error Handling
 
 StellarPay includes checks for:
 
-Empty recipient addresses
-Invalid Stellar addresses
-Invalid transaction amounts
-Insufficient XLM balance
-Wallet connection errors
-Transaction signing errors
-Transaction submission errors
-Development
+- Empty recipient addresses
+- Invalid Stellar addresses
+- Invalid transaction amounts
+- Insufficient XLM balance
+- Wallet connection errors
+- Transaction signing errors
+- Transaction submission errors
+
+## Development
 
 The project was developed incrementally using Git with meaningful commits for individual features and improvements.
 
-Security
+## Security
 
 StellarPay never asks users to enter their secret key or recovery phrase.
 
 Transaction signing is handled through the Freighter wallet.
 
-License
+## License
 
 This project is for educational purposes.
