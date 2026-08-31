@@ -16,6 +16,7 @@ function App() {
   const [amount, setAmount] = useState("");
   const [status, setStatus] = useState("");
   const [transactionHash, setTransactionHash] = useState("");
+  const [isSending, setIsSending] = useState(false);
   const connectWallet = async () => {
     try {
       setStatus("");
@@ -52,14 +53,17 @@ function App() {
   };
 
   const disconnectWallet = () => {
-    setWalletAddress("");
-    setBalance(null);
-    setRecipient("");
-    setAmount("");
-    setStatus("");
-  };
+  setWalletAddress("");
+  setBalance(null);
+  setRecipient("");
+  setAmount("");
+  setStatus("");
+  setTransactionHash("");
+};
 
   const sendXLM = async () => {
+  setTransactionHash("");
+
   if (!recipient.trim()) {
     setStatus("Please enter a recipient address.");
     return;
@@ -71,7 +75,10 @@ function App() {
   }
 
   try {
+    setIsSending(true);
     setStatus("Preparing transaction...");
+  
+  
 
     const transactionXdr = await createTransaction(
       walletAddress,
@@ -123,14 +130,14 @@ console.log(
 
 setTransactionHash(submitResult.hash);
 
-    setStatus("Transaction signed successfully.");
-
   } catch (error) {
     console.error("Transaction error:", error);
 
     setStatus(
       `Transaction failed: ${error.message}`
     );
+      } finally {
+    setIsSending(false);
   }
 };
   return (
@@ -188,9 +195,9 @@ setTransactionHash(submitResult.hash);
             }
           />
 
-          <button onClick={sendXLM}>
-            Send XLM
-          </button>
+          <button onClick={sendXLM} disabled={isSending}>
+  {isSending ? "Sending..." : "Send XLM"}
+</button>
 
           {status && (
             <div className="status">
