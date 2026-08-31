@@ -126,3 +126,19 @@ button {
   margin-top: 10px;
   font-weight: 600;
 }
+
+.status {
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.status-error {
+  border: 1px solid rgba(255, 80, 80, 0.4);
+}
+
+.status-success {
+  border: 1px solid rgba(80, 220, 140, 0.4);
+}

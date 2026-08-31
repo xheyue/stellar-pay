@@ -231,10 +231,21 @@ setAmount("");
 </button>
 
           {status && (
-            <div className="status">
-              {status}
-            </div>
-          )}
+  <div
+    className={`status ${
+      status.toLowerCase().includes("failed") ||
+      status.toLowerCase().includes("invalid") ||
+      status.toLowerCase().includes("insufficient") ||
+      status.toLowerCase().includes("could not")
+        ? "status-error"
+        : status.toLowerCase().includes("success")
+        ? "status-success"
+        : ""
+    }`}
+  >
+    {status}
+  </div>
+)}
 
           {transactionHash && (
   <div className="transaction-result">
